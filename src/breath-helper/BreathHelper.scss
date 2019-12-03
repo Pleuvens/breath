@@ -1,0 +1,82 @@
+.breath-helper {
+    width: 50vw;
+    height: 50vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12rem;
+
+    opacity: inherit;
+}
+
+$duration: 6s;
+
+.breath-helper span {
+    position: absolute;
+    display: block;
+	  background: #000;
+	  transition: all $duration/4 linear;
+}
+
+.breath-helper .top,
+.breath-helper .bottom {
+    width: 100%;
+    height: 5px;
+    transform: scaleX(0);
+}
+.breath-helper .left,
+.breath-helper .right {
+    width: 5px;
+    height: 100%;
+    transform: scaleY(0);
+}
+
+.breath-helper .top {
+    top: 0;
+    left: 0;
+	  transition-delay: $duration*3/4;
+    transform-origin: top left;
+}
+.breath-helper .right {
+    top: 0;
+    right: 0;
+  	transition-delay: $duration/2;
+    transform-origin: top left;
+}
+.breath-helper .bottom {
+    bottom: 0;
+    right: 0;
+  	transition-delay: $duration/4;
+    transform-origin: top right;
+}
+.breath-helper .left {
+    top: 0;
+    left: 0;
+    transform-origin: bottom left;
+}
+
+.breath-helper:hover {
+  .top {
+    transition-delay: 0s;
+  }
+  .right {
+    transition-delay: $duration/4;
+  }
+  .bottom {
+    transition-delay: $duration/2;
+  }
+  .left {
+    transition-delay: $duration*3/4;
+  }
+  .top,
+  .bottom {
+  	transform: scaleX(1);
+  }
+  .left,
+  .right {
+      transform: scaleY(1);
+  }
+}
