@@ -12,7 +12,7 @@
     opacity: inherit;
 }
 
-$duration: 6s;
+$duration: 3s;
 
 .breath-helper span {
     position: absolute;
@@ -58,7 +58,7 @@ $duration: 6s;
     transform-origin: bottom left;
 }
 
-.breath-helper:hover {
+.breath-helper-anim {
   .top {
     transition-delay: 0s;
   }
