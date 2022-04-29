@@ -32,19 +32,18 @@ class App extends React.Component {
     const step = this.state.step;        
     return (
       <div className="App">
-      <Transition
-      items={step}
-      from={{ position: 'absolute', opacity: 0 }}
-      enter={{ opacity: 1 }}
-      leave={{ opacity: 0 }}>
-      {step =>
-        props => <BreathHelper animProps={props} msg={steps[step]} />
-      }
-      </Transition>
-      </div>
-      
-      )
-    }
+        <Transition
+          items={step}
+          from={{ position: 'absolute', opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}>
+          {step =>
+            props => <BreathHelper animProps={props} msg={steps[step]} />
+          }
+        </Transition>
+      </div> 
+    )
   }
+}
 
 export default App;
